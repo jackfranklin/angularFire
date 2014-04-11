@@ -9,9 +9,15 @@
 //      http://angularfire.com
 //      License: MIT
 
+
 "use strict";
 
-(function() {
+if(window && window.angular) {
+  bindAngularFire(window.angular);
+} else if (typeof exports === 'object') {
+  module.exports = bindAngularFire;
+}
+function bindAngularFire(angular) {
 
   var AngularFire, AngularFireAuth;
 
@@ -1015,4 +1021,4 @@
       }
     }
   };
-})();
+};
